@@ -21,14 +21,16 @@ const addItem = function (name) {
 };
 
 const findAndToggleChecked = function (id) {
-  let bool = this.findById(id).checked;
-  bool = !bool;
+  let target = this.findById(id); 
+  this.findById(id).checked = !target.checked;
 };
 
 const findAndUpdateName = function (id, newName) {
   try {
-    item.validateName(newName);
-    item.name = newName;
+    
+    let itemId = this.findById(id);
+    itemId.name = newName;
+    item.validateName(itemId.name);
   } catch (e) {
     console.log(`Cannot update name: ${e.message}`);
   }
