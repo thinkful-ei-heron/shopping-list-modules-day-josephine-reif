@@ -21,13 +21,13 @@ const addItem = function (name) {
 };
 
 const findAndToggleChecked = function (id) {
-  let target = this.findById(id); 
+  let target = this.findById(id);
   this.findById(id).checked = !target.checked;
 };
 
 const findAndUpdateName = function (id, newName) {
   try {
-    
+
     let itemId = this.findById(id);
     itemId.name = newName;
     item.validateName(itemId.name);
@@ -40,6 +40,10 @@ const findAndDelete = function (id) {
   this.items = this.items.filter(item => item.id !== id);
 };
 
+const toggleCheckedFilter = function () {
+  this.hideCheckedItems = !this.hideCheckedItems;
+};
+
 export default {
   items,
   hideCheckedItems,
@@ -47,5 +51,6 @@ export default {
   addItem,
   findAndToggleChecked,
   findAndUpdateName,
-  findAndDelete
+  findAndDelete,
+  toggleCheckedFilter
 };
