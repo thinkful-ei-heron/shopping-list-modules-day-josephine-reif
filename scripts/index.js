@@ -27,6 +27,8 @@ store.addItem('rice');
 // grab the id of the first store item (bananas)
 let id = store.items[0].id;
 // delete this item from the store
-// console.log(id);
+console.log(id);
+console.log(store.items);
 store.findAndDelete(id);
+console.log(store.items);
 shoppingList.render();
