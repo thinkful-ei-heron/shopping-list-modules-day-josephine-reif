@@ -21,7 +21,7 @@ const addItem = function (name) {
 };
 
 const findAndToggleChecked = function (id) {
-  return !this.findById(id).checked;
+  !this.findById(id).checked;
 };
 
 const findAndUpdateName = function (id, newName) {
