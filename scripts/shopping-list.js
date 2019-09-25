@@ -45,12 +45,12 @@ const render = function () {
 };
 
 const addItemToShoppingList = function (itemName) {
-  try{
+  try {
     item.validateName(itemName);
     let result = item.create(itemName);
     store.items.push(result);
     render();
-  } catch (e){
+  } catch (e) {
     console.log(`Cannot add item: ${e.message}`);
   }
 };
